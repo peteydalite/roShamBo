@@ -10,7 +10,7 @@ public class RoShamBo {
 		//Initial prompt for user
 		
 		System.out.println("Ro Sham Bo! The game of rock, paper, scissor. Can you beat the computer?");
-		System.out.println("Best 3 out of 5 wins!");
+		System.out.println("Best out of 3 wins!");
 		System.out.println("");
 		System.out.println("For your choice please enter in the following icons...");
 		System.out.println("Rock: ()    Paper: []    Scissor: 8<");
@@ -28,6 +28,8 @@ public class RoShamBo {
 		Boolean noWinners = true;
 		
 		
+		
+		//Continuous loop until someone wins
 		while(noWinners) {
 			
 				
@@ -44,17 +46,16 @@ public class RoShamBo {
 			
 			//Convert user choice to numbers for easier evaluation
 			int intUser = 0;
-			if(userInput.equals("[]")){
+			if(userInput.trim().equals("[]")){
 				intUser = 1;
-			}else if(userInput.equals("8<")) {
+			}else if(userInput.trim().equals("8<")) {
 				intUser = 2;
 			}
 			
 			
 			//Generate comp choice
 			Random randNum = new Random();
-			int upperBound = 2;
-			int compChoice = randNum.nextInt(upperBound);
+			int compChoice = randNum.nextInt(2);
 			String compChoiceIcon = "";
 			
 			
